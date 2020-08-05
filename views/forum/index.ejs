@@ -6,7 +6,12 @@
     </div>
 </nav>
 <main>
-
+    <a href="/forum/new-thread">New Thread</a>
+    <br>
+    <% threads.forEach(function(thread) { %>
+    <br>
+    <a href="/forum/threads/<%= thread._id %>"><%= thread.topic %></a>
+    <% }); %>
 </main>
 
 <%- include('../partials/footer') %>

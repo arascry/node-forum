@@ -12,10 +12,11 @@ const postSchema = new Schema({
 }, { timestamps: true });
 
 const threadSchema = new Schema({
-    title: String,
-    author: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    topic: String,
+    author: { type: Schema.Types.ObjectId, ref: 'User' },
     created: Date,
     updated: Date,
+    text: String,
     posts: [postSchema]
 }, { timestamps: true });
 

@@ -1,0 +1,20 @@
+<% if(thread.posts) { %>
+<% thread.posts.forEach(function(post, idx) { %>
+<div class="post">
+    <% if(post.author.equals(user._id)) { %>
+    <p>Author: <%= post.author.name %></p>
+    <p>Created: <%= post.created %></p>
+    <p><%= post.text %></p>
+    <p>Last Updated: <%= post.updated %></p>
+    <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>" method="get">
+        <button type="submit">Edit</button>
+    </form>
+    <% } else { %>
+    <p>Author: <%= post.author.name %></p>
+    <p>Created: <%= post.created %></p>
+    <p><%= post.text %></p>
+    <p>Last Updated: <%= post.updated %></p>
+    <% } %>
+</div>
+<% }); %>
+<% } %>

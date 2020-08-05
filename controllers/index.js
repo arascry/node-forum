@@ -1,7 +1,11 @@
 const User = require("../models/user");
+const passport = require('passport');
 
 module.exports = {
-    index
+    index,
+    authenticate,
+    callback,
+    logout,
 }
 
 function index(req, res) {
@@ -16,4 +20,27 @@ function index(req, res) {
             title: 'Paracosm Home'
         });
     });
+}
+
+
+function authenticate(req, res, next) {
+    passport.authenticate(
+        'google',
+        { scope: ['profile', 'email'] }
+    )(req, res, next);
+}
+
+function callback(req, res, next) {
+    passport.authenticate(
+        'google',
+        {
+            successRedirect: '/forum',
+            failureRedirect: '/'
+        }
+    )(req, res, next);
+}
+
+function logout(req, res) {
+    req.logOut();
+    res.redirect('/');
 }

@@ -1,0 +1,20 @@
+<%- include('../partials/boiler') %>
+<%- include('../partials/banner') %>
+<nav>
+    <div>
+        <%= thread.topic %>
+    </div>
+</nav>
+<main>
+    <div class="post-container">
+        <%- include('../partials/thread') %>
+        <%- include('../partials/post') %>
+    </div>
+    <div class="textbox">
+        <form action="/forum/threads/<%= thread._id %>" method="POST">
+            <textarea name="text"></textarea>
+            <button type="submit">Submit Post</button>
+        </form>
+    </div>
+</main>
+<%- include('../partials/footer') %>

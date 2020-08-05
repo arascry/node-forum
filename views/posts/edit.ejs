@@ -1,0 +1,21 @@
+<%- include('../partials/boiler') %>
+<%- include('../partials/banner') %>
+<nav>
+    <div>
+        LINKS
+    </div>
+</nav>
+<main>
+    <div class="textbox">
+        <form action="<%= post._id%>?_method=PUT" method="POST">
+            <textarea name="text"><%= post.text %></textarea>
+            <button type="submit">Edit Post</button>
+        </form>
+        <form action="<%= post._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete Post</button>
+        </form>
+    </div>
+</main>
+
+
+<%- include('../partials/footer') %>
