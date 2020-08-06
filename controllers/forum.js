@@ -54,7 +54,7 @@ function show(req, res) {
                 populate: { path: 'author' }
             })
             .exec(function (err, thread) {
-                res.render('forum/threads', {
+                res.render('forum/thread', {
                     user,
                     thread,
                     title: thread.topic

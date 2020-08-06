@@ -2,16 +2,16 @@
 <%- include('../partials/banner') %>
 <nav>
     <div>
-        Link 1 | Link 2 | Link 3 | Link 4 | Link 5
+        <a href="/forum/new-thread">New Thread</a>
     </div>
 </nav>
 <main>
-    <a href="/forum/new-thread">New Thread</a>
-    <br>
     <% threads.forEach(function(thread) { %>
     <br>
     <a href="/forum/threads/<%= thread._id %>"><%= thread.topic %></a>
     <% }); %>
 </main>
+<script>
 
+</script>
 <%- include('../partials/footer') %>

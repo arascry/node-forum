@@ -2,6 +2,7 @@
     <% if(thread.author.equals(user._id)) { %>
     <p>Author: <%= thread.author.name %></p>
     <p>Created: <%= thread.created %></p>
+
     <p><%= thread.text %></p>
     <p>Last Updated: <%= thread.updated %></p>
     <form action="/forum/threads/<%= thread._id %>/edit" method="get">

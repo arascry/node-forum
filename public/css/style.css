@@ -28,6 +28,19 @@ form > textarea {
     height: 50vh;
 }
 
+.login-overlay{
+    background-image: url("https://learn.yorkcs.com/wp-content/uploads/2019/02/starfield_edgetoedge.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .banner-container {
     display: flex;
     justify-content: space-between;
@@ -39,7 +52,6 @@ form > textarea {
     align-self: center;
     height: 75%;
     margin-left: 25px;
-    background-color: white;
     border-radius: 5px;
 }
 
@@ -47,9 +59,13 @@ form > textarea {
     margin-left: auto;
 }
 
+.banner-left > img {
+    height: 100%;
+}
+
 .banner-right {
     align-self: center;
-    margin-right: 25px
+    margin-right: 25px;
 }
 
 .banner-portrait {
@@ -65,12 +81,20 @@ form > textarea {
     padding: 10px;
 }
 
-.post-container{
+.post-container {
     height: 85%;
 }
 
-.post{
+.post {
     font-size: 1rem;
     padding: 5px;
     padding-top: 10px;
+}
+
+.welcome {
+    padding: 25px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    display: none;
 }

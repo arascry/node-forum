@@ -29,7 +29,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use('/public/imgs/', express.static('./public/imgs'));
 app.use('/', indexRouter);
 app.use('/forum', forumRouter);
 
