@@ -4,9 +4,11 @@
     <p>Created: <%= thread.created %></p>
     <p><%= thread.text %></p>
     <p>Last Updated: <%= thread.updated %></p>
-    <button>Edit</button>
+    <form action="/forum/threads/<%= thread._id %>/edit" method="get">
+        <button type="submit">Edit</button>
+    </form>
     <% } else { %>
-    <p>Author: <%= thread.author %></p>
+    <p>Author: <%= thread.author.name %></p>
     <p>Created: <%= thread.created %></p>
     <p><%= thread.text %></p>
     <p>Last Updated: <%= thread.updated %></p>

@@ -6,11 +6,14 @@ module.exports = {
     index,
     new: newThread,
     show,
-    edit,
+    editThread,
+    editPost,
     create,
     post,
-    update,
-    delete: deletePost
+    updateThread,
+    updatePost,
+    deleteThread,
+    deletePost
 };
 
 function checkAuthentication(req, res) {
@@ -44,7 +47,7 @@ function newThread(req, res) {
 
 function show(req, res) {
     checkAuthentication(req, res).then(user => {
-        Thread.findById(req.params.id)
+        Thread.findById(req.params.threadId)
             .populate('author')
             .populate({
                 path: 'posts',
@@ -60,7 +63,19 @@ function show(req, res) {
     });
 }
 
-function edit(req, res) {
+function editThread(req, res) {
+    checkAuthentication(req, res).then(user => {
+        Thread.findById(req.params.threadId, function (err, thread) {
+            res.render('threads/edit', {
+                user,
+                title: "Edit Thread",
+                thread
+            });
+        });
+    });
+}
+
+function editPost(req, res) {
     checkAuthentication(req, res).then(user => {
         Thread.findById(req.params.threadId, function (err, thread) {
             res.render('posts/edit', {
@@ -104,12 +119,27 @@ function post(req, res) {
     });
 }
 
-function update(req, res) {
+function updateThread(req, res) {
+    Thread.findById(req.params.threadId, function (err, thread) {
+        thread.text = req.body.text;
+        thread.save(function (err) {
+            res.redirect(`/forum/threads/${req.params.threadId}`);
+        });
+    });
+}
+
+function updatePost(req, res) {
     Thread.findById(req.params.threadId, function (err, thread) {
         thread.posts.id(req.params.postId).text = req.body.text;
         thread.save(function (err) {
             res.redirect(`/forum/threads/${req.params.threadId}`);
         });
+    });
+}
+
+function deleteThread(req, res) {
+    Thread.deleteOne({ _id: req.params.threadId }).then(function (err) {
+        res.redirect('/forum');
     });
 }
 

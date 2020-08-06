@@ -6,7 +6,7 @@
     <p>Created: <%= post.created %></p>
     <p><%= post.text %></p>
     <p>Last Updated: <%= post.updated %></p>
-    <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>" method="get">
+    <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>/edit" method="get">
         <button type="submit">Edit</button>
     </form>
     <% } else { %>
