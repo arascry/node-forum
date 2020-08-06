@@ -7,11 +7,11 @@
 </nav>
 <main>
     <div class="textbox">
-        <form action="<%= post._id %>?_method=PUT" method="POST">
+        <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>?_method=PUT" method="POST">
             <textarea name="text"><%= post.text %></textarea>
             <button type="submit">Edit Post</button>
         </form>
-        <form action="<%= post._id %>?_method=DELETE" method="POST">
+        <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Post</button>
         </form>
     </div>

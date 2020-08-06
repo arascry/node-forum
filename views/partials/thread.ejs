@@ -1,9 +1,11 @@
 <div class="post">
     <% if(thread.author.equals(user._id)) { %>
-    <p>Author: <%= thread.author.name %></p>
-    <p>Created: <%= thread.created %></p>
-
-    <p><%= thread.text %></p>
+    <p>Author: <%= thread.author.name %> Created:
+        <%= new Intl.DateTimeFormat().format(thread.created) + " at " + thread.created.getHours() + ":" + thread.created.getMinutes() %>
+    </p>
+    <p>
+        <%- thread.text.replace('\n', '</p><br><p>' ) %>
+    </p>
     <p>Last Updated: <%= thread.updated %></p>
     <form action="/forum/threads/<%= thread._id %>/edit" method="get">
         <button type="submit">Edit</button>

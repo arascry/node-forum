@@ -1,11 +1,12 @@
 <%- include('../partials/boiler') %>
 <%- include('../partials/banner') %>
 <nav>
-    <div>
-        <%= thread.topic %>
-    </div>
+    <a href="/forums">Return to Forums</a>
 </nav>
 <main>
+    <div class="subject">
+        <%= thread.topic %>
+    </div>
     <div class="post-container">
         <%- include('../partials/thread') %>
         <%- include('../partials/post') %>

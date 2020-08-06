@@ -2,9 +2,10 @@
 <% thread.posts.forEach(function(post, idx) { %>
 <div class="post">
     <% if(post.author.equals(user._id)) { %>
-    <p>Author: <%= post.author.name %></p>
-    <p>Created: <%= post.created %></p>
-    <p><%= post.text %></p>
+    <p>Author: <%= thread.author.name %> Created:
+        <%= new Intl.DateTimeFormat().format(post.created) + " at " + post.created.getHours() + ":" + post.created.getMinutes() %>
+    </p>
+    <p><%- post.text.replace('\n', '</p><br><p>' ) %></p>
     <p>Last Updated: <%= post.updated %></p>
     <form action="/forum/threads/<%= thread._id %>/posts/<%= post._id %>/edit" method="get">
         <button type="submit">Edit</button>
