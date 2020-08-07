@@ -1,5 +1,5 @@
 # Node.js Forum Project #
-This project utilizes MVC and RESTful routing to create a simple forum built on Node.js. Requires the user to log in via Google to access the forums. The user can then perform typical CRUD operations in regards to posting, 
+This project utilizes MVC and RESTful routing to create a simple forum built on Node.js in a week. Requires the user to log in via Google to access the forums. The user can then perform typical CRUD operations in regards to posting, 
 
 ## Screenshots ##
 ![Landing Page](https://cdn.discordapp.com/attachments/333076906670948374/741176592956653682/screenshot.PNG)
