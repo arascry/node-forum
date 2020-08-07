@@ -22,3 +22,7 @@ Back-End:
 ## Getting Started ##
 
 Simply visit: https://seir-paracosm-app.herokuapp.com/ to sign in. Note your full name is exposed on the website.
+
+## Planned Features ##
+
+Prettier interface, securing certain portions of the website, custom account creation.
